@@ -1,0 +1,4 @@
+.task-action{
+    display: flex;
+    justify-content: space-between;
+}
