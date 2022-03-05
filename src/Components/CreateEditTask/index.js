@@ -18,9 +18,11 @@ const style = {
 };
 
 export default function CreateEditTask(props) {
-    const onClickCreate = () => {
-        console.log("onclicked");
-
+    const onClickBtn = () => {
+        if(props.buttonTitle === 'Create Task')
+        props.onCreateTaskClick();
+        else
+        props.onUpdateTaskClicked(props.taskId);
     };
 
    
@@ -67,9 +69,9 @@ export default function CreateEditTask(props) {
                     size="small"
                     fullWidth
                     style={{ marginTop: "20px" }}
-                    onClick={props.onCreateTaskClick}
+                    onClick={onClickBtn}
                 >
-                    Create Task
+                   {props.buttonTitle}
                 </Button>
             </Box>
         </Modal>
